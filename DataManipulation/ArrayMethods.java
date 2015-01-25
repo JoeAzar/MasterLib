@@ -36,6 +36,32 @@ public class ArrayMethods
 		}
 		return array;
 	}
+	
+	/**
+	 * Returns all permutations of an ArrayList
+	 */
+	static <T> ArrayList<ArrayList<T>> getperm(ArrayList<T> vals)
+	{
+		ArrayList<ArrayList<T>> fin = new ArrayList<ArrayList<T>>();
+		if (vals.size() == 0)
+			return fin;
+		if (vals.size() == 1)
+		{
+			fin.add(vals);
+			return fin;
+		}
+		for (int i = 0; i < vals.size(); ++i)
+		{
+			ArrayList<T> tmp = (ArrayList<T>) vals.clone();
+			tmp.remove(i);
+			for (ArrayList<T> ast : getperm(tmp))
+			{
+				ast.add(0, vals.get(i));
+				fin.add(ast);
+			}
+		}
+		return fin;
+	}
 
 	/**
 	 * @param element
