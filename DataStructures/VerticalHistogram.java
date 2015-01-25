@@ -2,7 +2,7 @@ package DataStructures;
 
 import java.util.TreeMap;
 
-public class HistogramStuff //example usage
+public class VerticalHistogramResources //example usage
 {
 
 	public static void main(String[] args)
