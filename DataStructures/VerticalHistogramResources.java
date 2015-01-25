@@ -29,13 +29,13 @@ class VerticalHistogram<T>
 {
 	TreeMap<T, Integer> histo = new TreeMap<T, Integer>();
 
-	public Histogram(T[] init)
+	public VerticalHistogram(T[] init)
 	{
 		for (T var : init)
 			addField(var);
 	}
 
-	public Histogram()
+	public VerticalHistogram()
 	{
 	}
 	
