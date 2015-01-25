@@ -6,8 +6,7 @@ import java.util.Collections;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- *	A simple graph structure, supports integer weights and direction
- * supports djikstra's, bfs, dfs
+ *	A simple graph structure, supports direction, bfs, dfs
  */
 public class UnweightedGraph<V>
 {
