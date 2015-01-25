@@ -289,38 +289,22 @@ public class ArrayMethods
 		return m;
 	}
 
-	public static char[][] flipOnXAxis(char[][] original)
+	public static char[][] flipY(char[][] original)
 	{
-		char[][] tempA = new char[original.length][original[0].length];
-		System.arraycopy(original, 0, tempA, 0, original.length);
-		for (int i = 0; i < (tempA.length / 2); i++)
-		{
-			char[] temp = tempA[i];
-			tempA[i] = tempA[tempA.length - i - 1];
-			tempA[tempA.length - i - 1] = temp;
-		}
-		return tempA;
+		char[][] nar = new char[original.length][original[0].length];
+		for (int i = 0; i < original.length; ++i)
+			for (int j = 0; j < original[0].length; ++j)
+				nar[i][j] = original[i][original[0].length - 1 - j];
+		return nar;
 	}
 
-	public static char[][] flipOnYAxis(char[][] original)
+	public static char[][] flipX(char[][] original)
 	{
-		char[][] yAxisReverse = new char[original.length][original[0].length];
-		if (yAxisReverse.length == 1)
-		{
-			System.arraycopy(original, 0, yAxisReverse, 0, original.length);
-			return yAxisReverse;
-		}
-
-		for (int i = 0; i < yAxisReverse.length; i++)
-		{
-			for (int j = 0; j < ((yAxisReverse[0].length % 2 == 0) ? yAxisReverse[0].length / 2
-					: (yAxisReverse[0].length / 2) + 1); j++)
-			{
-				yAxisReverse[i][j] = original[i][original[0].length - 1 - j];
-				yAxisReverse[i][original[0].length - 1 - j] = original[i][j];
-			}
-		}
-		return yAxisReverse;
+		char[][] nar = new char[original.length][original[0].length];
+		for (int i = 0; i < original.length; ++i)
+			for (int j = 0; j < original[0].length; ++j)
+				nar[i][j] = original[original.length - 1 - i][j];
+		return nar;
 	}
 
 	public static char[][] rotate90Right(char[][] ori)
