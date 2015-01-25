@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
+/**
+* @author Jackson Abascal
+*/
+
 public class MultigraphStuff //sample usage
 {
 	public static void main(String args[])
