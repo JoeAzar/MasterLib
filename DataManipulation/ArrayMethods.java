@@ -38,6 +38,46 @@ public class ArrayMethods
 	}
 	
 	/**
+	 * @param x
+	 * @param y
+	 * @param array
+	 * @return num of adj cells w/ a specified value
+	 */
+	static int numAdjacent(int x, int y, char[][] array) 
+	{
+		int na = 0;
+		final char SEARCH_CHAR = '*';
+		int startx = -1;
+		int starty = -1;
+		int xbound = 2;
+		int ybound = 2;
+		
+		if (x + 1 >= array.length)
+			xbound = 1;
+		if (y + 1 >= array[0].length)
+			ybound = 1;
+		if (x - 1 < 0)
+			startx = 0;
+		if (y - 1 < 0)
+			starty = 0;
+		
+		for (int dx = startx; dx < xbound; dx++)
+		{
+			for (int dy = starty; dy < ybound; dy++)
+			{
+				if (dx != 0 || dy != 0)
+				{
+					if (array[x + dx][y + dy] == SEARCH_CHAR)
+					{
+						na++;
+					}
+				}
+			}
+		}
+		return na;
+	}
+	
+	/**
 	 * Returns all permutations of an ArrayList
 	 */
 	static <T> ArrayList<ArrayList<T>> getperm(ArrayList<T> vals)
