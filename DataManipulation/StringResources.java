@@ -2,7 +2,7 @@ package DataManipulation;
 
 import java.util.ArrayList;
 
-public class StringStuff
+public class StringResources
 {
 
 	static String[] morse = { "01", "0111", "0101", "011", "1", "1101", "001", "1111", "11", "1000", "010", "1011", "00", "01",
