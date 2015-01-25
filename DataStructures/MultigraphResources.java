@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-public class MultigraphStuff //sample usage
+public class MultigraphResources //sample usage
 {
 	public static void main(String args[])
 	{
