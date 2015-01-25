@@ -1,9 +1,7 @@
-package DataStructures;
-
 import java.util.HashMap;
 import java.util.Set;
 
-public class TwinMap<A, B>
+class TwinMap<A, B>
 {
 	HashMap<A, B> a = new HashMap<A, B>();
 	HashMap<B, A> b = new HashMap<B, A>();
