@@ -2,7 +2,7 @@ package DataStructures;
 
 import java.util.TreeMap;
 
-public class VerticalHistogramResources //example usage
+public class HistogramResources //example usage
 {
 
 	public static void main(String[] args)
@@ -25,25 +25,39 @@ public class VerticalHistogramResources //example usage
 
 }
 
-class VerticalHistogram<T>
+class Histogram<T>
 {
-	TreeMap<T, Integer> histo = new TreeMap<T, Integer>();
+	TreeMap<T, Integer> histo;
+	final String barString = "*"; // For ease of modification
 
-	public VerticalHistogram(T[] init)
+	public Histogram(T[] init, Comparator<T> c)
 	{
+		this(c);
 		for (T var : init)
 			addField(var);
 	}
 
-	public VerticalHistogram()
+	public Histogram(T[] init)
 	{
+		this();
+		for (T var : init)
+			addField(var);
 	}
-	
-	public void print() // destroys histogram...
+
+	public Histogram(Comparator<T> c)
+	{
+		histo = new TreeMap<T, Integer>(c);
+	}
+
+	public Histogram()
+	{
+		histo = new TreeMap<T, Integer>();
+	}
+
+	public void printVertical() // destroys histogram...
 	{
 		@SuppressWarnings("unchecked")
 		TreeMap<T, Integer> tempc = (TreeMap<T, Integer>) histo.clone();
-		String printString = "*"; // For ease of modification
 		int x = findLargest();
 		boolean hit = false;
 		for (T key : histo.keySet())
@@ -64,13 +78,12 @@ class VerticalHistogram<T>
 				if (i == k)
 				{
 
-					System.out.print(printString);
+					System.out.print(barString);
 					histo.put(key, --i);
 				}
 				else
 					System.out.print(" ");
 				System.out.print(" ");
-
 			}
 			System.out.println();
 		}
@@ -81,6 +94,20 @@ class VerticalHistogram<T>
 		}
 		System.out.println();
 		histo = tempc;
+	}
+
+	public void printHorizontal()
+	{
+		for (T key : histo.keySet())
+		{
+			int occ = histo.get(key);
+			System.out.print(key);
+			for (int i = 0; i < occ; i++)
+			{
+				System.out.print(" " + barString);
+			}
+			System.out.println();
+		}
 	}
 
 	private int findLargest()
