@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-public class NodeGraphStuff //sample usage
+public class MultigraphStuff //sample usage
 {
 	public static void main(String args[])
 	{
-		NodeGraph<String> ng = new NodeGraph<String>();
+		Multigraph<String> ng = new Multigraph<String>();
 		ng.addRule("a", "h", 35);
 		ng.addRule("a", "c", 5);
 		ng.addRule("a", "b", 7);
