@@ -1,13 +1,5 @@
-public class Dynamic
+class Dynamic
 {
-	public static void main(String[] args)
-	{
-		//System.out.println(knapsack_problem(new int[] { 10, 20, 30, 40, 50 }, new int[] { 1, 10, 100, 5, 10 }, 59));
-		//System.out.println(sum_configurations(new int[] { 2, 3, 5, 7, 11, 13 }, 82));
-		//System.out.println(Arrays.toString(longest_common_substring("...t..t..t..t..".toCharArray(), "..t. .ttttt....t.t.t.".toCharArray())));
-		//System.out.println(int_knapsack_problem(new int[] { 2, 1, 3, 5 }, new int[] { 6, 4, 4, 2 }, 5));
-	}
-
 	/**
 	 * Returns the sum and bounds of the maximum subsequence sum within bounds
 	 * returned in the form {sum, start_index, end_index};
