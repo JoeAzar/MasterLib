@@ -17,7 +17,7 @@ class Bitmask
 	}
 
 	/**
-	 * 
+	 * sets the i'th bit of m to val'
 	 */
 	static int seti(int m, int i, boolean val)
 	{
