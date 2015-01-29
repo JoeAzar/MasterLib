@@ -376,13 +376,9 @@ public class ArrayMethods
 	public static char[][] rotate90Right(char[][] ori)
 	{
 		char[][] temp = new char[ori[0].length][ori.length];
-		for (int i = 0; i < ori[0].length; i++)
-		{
-			for (int j = 0; j < ori.length; j++)
-			{
-				temp[i][j] = ori[j][i];
-			}
-		}
+		for (int i = 0; i < ori.length; i++)
+			for (int j = 0; j < ori[0].length; j++)
+				temp[j][ori.length - i - 1] = ori[i][j];
 		return temp;
 	}
 
