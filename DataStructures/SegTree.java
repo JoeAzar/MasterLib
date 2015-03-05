@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 //segment tree, for fast min/max/sum of ranges in an array
 class SegTree
 {
@@ -22,10 +24,39 @@ class SegTree
 	}
 
 	Node root;
+	int[] data;
 
 	public SegTree(int[] data)
 	{
+		this.data = Arrays.copyOf(data, data.length);
 		root = build(data, 0, data.length - 1);
+	}
+
+	public void set(int i, int new_val)
+	{
+		update(root, i, new_val);
+	}
+
+	public int get(int i)
+	{
+		return data[i];
+	}
+
+	//update an index
+	private void update(Node n, int i, int new_val)
+	{
+		if (i >= n.i && i <= n.j)
+		{
+			n.sum += new_val - data[i];
+			n.max = Math.max(n.max, new_val);
+			n.min = Math.max(n.max, new_val);
+
+			if (n.left != null)
+			{
+				update(n.left, i, new_val);
+				update(n.right, i, new_val);
+			}
+		}
 	}
 
 	//max
