@@ -1,4 +1,6 @@
-class Dynamic
+package Dynamic;
+
+public class Dynamic
 {
 	/**
 	 * Returns the sum and bounds of the maximum subsequence sum within bounds
@@ -103,14 +105,6 @@ class Dynamic
 		System.arraycopy(a, x - grid[x][y], substr, 0, max);
 		return substr;
 	}
-
-	//	/**
-	//	 * returns the longest (not necessarily contiguous!) subsequence common to both input arrays
-	//	 */
-	//	public static int[] longest_common_subsequence(int a[], int b[])
-	//	{
-	//		
-	//	}
 
 	/**
 	 * given a set of integers, returns the number of ways to make them add up to sum, order dependent
