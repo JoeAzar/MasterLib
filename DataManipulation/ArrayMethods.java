@@ -286,22 +286,41 @@ public class ArrayMethods
 			}
 	}
 
-	public static int[][] combinations(int[] s)
-	{
-		ArrayList<int[]> tem = new ArrayList<int[]>();
-		for (int sampSize = 1; sampSize <= s.length; sampSize++)
-		{
-			for (int locInStr = 0; locInStr < (s.length + 1) - sampSize; locInStr++)
-			{
-				int endIndex = locInStr + sampSize;
-				tem.add(Arrays.copyOfRange(s, locInStr, endIndex));
-			}
-		}
-		int[][] tem1 = new int[tem.size()][];
-		for (int i = 0; i < tem1.length; i++)
-			tem1[i] = tem.get(i);
-		return tem1;
-	}
+       public static void combination(Object[]  elements, int K)
+       {
+            int N = elements.length;
+         
+            int combination[] = new int[K];
+         
+            int r = 0;      
+            int index = 0;
+         
+            while(r >= 0){
+                if(index <= (N + (r - K)))
+                {
+                    combination[r] = index;
+                     
+                    if(r == K-1)
+                    {
+                        System.out.println(Arrays.toString(combination)); //array of INDEXES
+                        index++;                
+                    }
+                    else
+                    {
+                        index = combination[r]+1;
+                        r++;                                        
+                    }
+                }
+                else
+                {
+                    r--;
+                    if(r > 0)
+                        index = combination[r]+1;
+                    else
+                        index = combination[0]+1;   
+                }           
+            }
+        }
 
 	public static int compareMatrices(int[][] num, int[][] mat)
 	{
